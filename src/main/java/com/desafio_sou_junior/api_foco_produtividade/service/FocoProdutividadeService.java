@@ -2,10 +2,12 @@ package com.desafio_sou_junior.api_foco_produtividade.service;
 
 import com.desafio_sou_junior.api_foco_produtividade.dto.FocoProdutividadeRequest;
 import com.desafio_sou_junior.api_foco_produtividade.dto.FocoProdutividadeResponse;
+import com.desafio_sou_junior.api_foco_produtividade.dto.StatisticsResponse;
 import com.desafio_sou_junior.api_foco_produtividade.model.FocoProdutividade;
 import com.desafio_sou_junior.api_foco_produtividade.repository.FocoProdutividadeRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.DoubleSummaryStatistics;
 import java.util.List;
 
 @Service
@@ -31,6 +33,22 @@ public class FocoProdutividadeService {
     }
 
     public void diagnostico(){
+
+    }
+
+    public StatisticsResponse statistics(){
+        var item = repository.listarTodos();
+        return new StatisticsResponse(
+                item
+                        .stream()
+                        .mapToDouble(FocoProdutividade::getNivelFoco)
+                        .average()
+                        .orElse(0.0),
+                item
+                        .stream()
+                        .mapToDouble(FocoProdutividade::getTempoMinutos)
+                        .sum());
+
 
     }
 
