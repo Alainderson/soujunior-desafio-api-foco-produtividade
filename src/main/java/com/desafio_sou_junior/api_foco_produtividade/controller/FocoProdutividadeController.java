@@ -2,7 +2,7 @@ package com.desafio_sou_junior.api_foco_produtividade.controller;
 
 import com.desafio_sou_junior.api_foco_produtividade.dto.FocoProdutividadeRequest;
 import com.desafio_sou_junior.api_foco_produtividade.dto.FocoProdutividadeResponse;
-import com.desafio_sou_junior.api_foco_produtividade.dto.StatisticsResponse;
+import com.desafio_sou_junior.api_foco_produtividade.dto.EstatisticaResponse;
 import com.desafio_sou_junior.api_foco_produtividade.model.FocoProdutividade;
 import com.desafio_sou_junior.api_foco_produtividade.service.FocoProdutividadeService;
 import jakarta.validation.Valid;
@@ -36,7 +36,7 @@ public class FocoProdutividadeController {
     }
 
     @GetMapping("/diagnostico-produtividade")
-    public StatisticsResponse verEstatistica() {
+    public EstatisticaResponse verEstatistica() {
         return service.statistics();
     }
 }
