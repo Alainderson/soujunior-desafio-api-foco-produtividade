@@ -15,7 +15,7 @@ API REST desenvolvida em Java com Spring Boot para registrar e analisar sessões
 
 ```bash
 # Clone o repositório
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone https://github.com/Alainderson/soujunior-desafio-api-foco-produtividade.git
 
 # Entre na pasta do projeto
 cd api-foco-produtividade
