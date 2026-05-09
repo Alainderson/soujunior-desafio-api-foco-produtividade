@@ -2,6 +2,8 @@
 
 API REST desenvolvida em Java com Spring Boot para registrar e analisar sessões de foco e produtividade.
 
+⚠️ A base inicia vazia. Use o endpoint `POST /registro-foco` para registrar sessões antes de consultar o diagnóstico.
+
 ---
 
 ## 📋 Requisitos
